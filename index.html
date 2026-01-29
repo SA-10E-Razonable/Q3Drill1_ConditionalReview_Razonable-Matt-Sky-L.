@@ -96,11 +96,10 @@
 			font-weight: 500;
 		}
 
-		/* NEW: result text style */
 		.result-text {
 			color: #c24b3b;
 			font-weight: bold;
-			font-size: 2rem;
+			font-size: 1.5rem;
 		}
 	</style>
 </head>
@@ -134,8 +133,7 @@
 			cursor: pointer;
 			margin-left:1000px;
 			margin-top:-350px;
-			text-align: center;
-		" py-click="show_results()">
+			text-align: center;"> 
 			View Results
 		</div>
 	</div>
@@ -149,11 +147,11 @@ def show_results(e=None):
         energy = float(document.getElementById("bar-energy").value)
         tempo = float(document.getElementById("bar-tempo").value)
     except ValueError:
-        display_result("Please enter valid numbers!")
+        document.getElementById("view-results").innerHTML = "Please enter valid numbers!"
         return
 
     if energy < 0 or energy > 100 or tempo < 0 or tempo > 100:
-        display_result("Values must be between 0 and 100!")
+        document.getElementById("view-results").innerHTML = "Values must be between 0 and 100!"
         return
 
     beat = (energy + tempo) / 2
@@ -167,12 +165,13 @@ def show_results(e=None):
     else:
         style = "EDM ⚡"
 
- document.getElementById("view-results").innerHTML = f"You match the beat: {style}"
+    document.getElementById("view-results").innerHTML = f"You match the beat: {style}"
 
 </py-script>
 
 </body>
 </html>
+
 
 
 
