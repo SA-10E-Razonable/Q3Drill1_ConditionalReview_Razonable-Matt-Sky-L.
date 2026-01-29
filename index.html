@@ -169,19 +169,10 @@ def show_results(e=None):
 
     display_result(f"You match the beat: {style}")
 
-def display_result(text):
-    btn = document.getElementById("view-results")
-    result_div = btn.nextElementSibling
-    if result_div is None or result_div.id != "result":
-        result_div = document.createElement("div")
-        result_div.id = "result"
-        result_div.className = "result-text"  # apply the new style class
-        result_div.style.marginTop = "10px"
-        btn.parentNode.insertBefore(result_div, btn.nextSibling)
-    result_div.innerText = text
 </py-script>
 
 </body>
 </html>
+
 
 
