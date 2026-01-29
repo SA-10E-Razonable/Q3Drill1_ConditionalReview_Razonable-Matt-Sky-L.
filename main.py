@@ -1,6 +1,6 @@
 from pyscript import document
 
-def show_results(event):
+def show_results():
     # Get the "View Results" div
     div = document.getElementById("view-results")
 
@@ -51,5 +51,6 @@ def set_result(button_div, text):
         button_div.parentNode.insertBefore(result_div, button_div.nextSibling)
 
     result_div.innerText = text
+
 
 
